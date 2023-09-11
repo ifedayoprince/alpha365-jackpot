@@ -1,0 +1,317 @@
+// Components
+.progress-bar.vertical {
+    height: 100%;
+    width: 1rem;
+    background-color: #171537;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+.progress-bar.vertical .bar {
+    background-color: #716bc7;
+    width: 100%;
+}
+.progress-bar {
+    width: 100%;
+    height: 1rem;
+    background-color: #171537;
+}
+.progress-bar .bar {
+    background-color: #716bc7;
+    height: 100%;
+}
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: Poppins;
+}
+
+@font-face {
+    font-family: 'Gothic';
+    src: url(/assets/SHOWG.TTF);
+}
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+.fade-out {
+    animation: fadeOut 300ms ease-out;
+}
+
+.dark .splash-screen {
+    background-color: hsl(39, 94%, 5%);
+    color: hsl(39, 94%, 35%);
+}
+
+.splash-screen {
+    width: 100vw;
+    height: 100%;
+    color: black;
+    background-color: wheat;
+    display: grid;
+    grid-template-rows: auto auto;
+    text-align: center;
+    justify-content: center;
+    align-content: center;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 5000;
+
+}
+
+.splash-screen img {
+    width: 7rem;
+}
+
+.attribution {
+    width: 100%;
+    position: absolute;
+    bottom: 6%;
+}
+
+body {
+    background-color: #171537;
+}
+
+nav {
+    padding: 0px 10px;
+    background-color: #4d46b9;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    align-items: center;
+    justify-content: space-between;
+}
+nav .logo, nav .menu-toggle {
+    height: 4rem;
+    width: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+nav .name {
+    height: 3rem;
+}
+
+.page {
+    height: 100vh;
+}
+.page .body {
+    display: grid;
+    height: 86%;
+    grid-template-columns: auto auto auto auto 2.5rem;
+    grid-template-rows: 6.5rem auto auto auto 4rem 7.5rem;
+    gap: 10px;
+    padding: 1rem;
+    grid-template-areas: 
+        'timer timer timer timer timer'
+        'view view view view bang-bar'
+        'view view view view bang-bar'
+        'view view view view bang-bar'
+        'minor-bar minor-bar minor-bar minor-bar minor-bar'
+        'bets bets bets bets bets';
+}
+div {
+    border-radius: 1rem;
+}
+
+
+// Timer 
+.timer {
+    background-color: #4d46b9;
+    grid-area: timer;
+    display: grid;
+    padding: 1rem;
+    grid-template-columns: 4rem auto 4rem auto 4rem;
+    justify-content: center;
+    gap: 10px;
+    align-items: center;
+}
+.timer .time {
+    display: grid;
+    max-width: min-content;
+    grid-template-rows: auto auto;
+    justify-content: center;
+    text-align: center;
+    color: #c9c8ea;
+}
+.timer .time h2 {
+    border: 1px solid #3d3894;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: xx-large;
+}
+.timer .time p {
+    color: #9290d5;
+}
+.timer .divide {
+    width: 1rem;
+    height: 1rem;
+    position: relative;
+    background-color: #2e2a6f;
+    border-radius: 50%;
+    top: -1rem;
+}
+.timer .divide::after {
+    content: '';
+    width: 1rem;
+    height: 1rem;
+    background-color: #2e2a6f;
+    position: absolute;
+    top: calc(1rem + 10px);
+    border-radius: 50%;
+}
+
+
+
+.view {
+    position: relative;
+    grid-area: view;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.view .title {
+    position: relative;
+    z-index: 5;
+    font-family: 'Gothic';
+    font-size: x-large;
+    background-color: #1f1c4a;
+    color: #9490d5;
+    width: max-content;
+    padding: 5px 1.8rem;
+    border-radius: 10px;
+}
+.view .info {
+    position: absolute;
+    background-color: #2e2a6f;
+    top: 5%;
+    padding-top: 3rem;
+    width: 100%;
+    height: 95%;
+    display: grid;
+    grid-template-rows: auto auto auto auto;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10px;
+}
+.view .info .card {
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: flex-start;
+    gap: 1.4rem;
+    align-items: center;
+}
+.view .info .card img {
+    width: 3rem;
+}
+.view .info .texts h4 {
+    text-transform: uppercase;
+    color: #dbdaf1;
+    font-weight: 600;
+}
+.view .info .texts p {
+    color: #8c88cd;
+    font-size: small;
+}
+
+
+// Bang bar
+.bang-bar {
+    background-color: #3e3894;
+    grid-area: bang-bar;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0px;
+    border-radius: 10vw;
+    height: 95%;
+    align-self: flex-end;
+}
+.bang-bar img {
+    width: 1.8rem;
+    margin-bottom: 10px;
+}
+
+// Minor bar
+.minor-bar {
+    background-color: #3e3894;
+    grid-area: minor-bar;
+    padding: 8px 1rem 8px 1rem;
+    display: grid;
+    grid-template-rows: auto auto;
+}
+.minor-bar .labels {
+    display: flex;
+    color: #c3c2e3;
+    width: 100%;
+    font-size: 0.85rem;
+    justify-content: space-between;
+}
+
+
+// Bets
+.bets {
+    background-color: #2e2a6f;
+    grid-area: bets;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.bets .bet {
+    display: grid;
+    grid-template-rows: auto auto;
+    // gap: 10px;
+    justify-content: center;
+    text-align: center;
+    background-color: #1f1c4a;
+    width: 5.5rem;
+    height: 5.5rem;
+    padding: 10px 10px 4px 10px;
+    border-radius: 10px;
+}
+.bets .bet h2 {
+    color: #c9c8ea;
+    padding: 10px 0px 0px 0px;
+    // text-align: center;
+    // font-weight: 500;
+    font-size: x-large;
+}
+.bets .bet .subinfo {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 5px;
+    justify-content: flex-start;
+    align-items: center;
+    color: #6f6ba9;
+    font-size: small;
+}
+.bets .bet .subinfo i {
+    font-size: small;
+}
+
+
+.rules {
+    padding: 8px 16px;
+    color: #8a87b2;
+}
