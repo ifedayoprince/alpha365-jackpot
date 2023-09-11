@@ -1,4 +1,4 @@
-import React from "react";
+
 export function Bets({}) {
   return <div className="bets">
 				<div className="bet">
