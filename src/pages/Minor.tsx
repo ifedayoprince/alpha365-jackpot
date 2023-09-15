@@ -18,7 +18,7 @@ useEffect(() => {
 }, [])
 
 	return (<section className="page minor-jackpot">
-		<section className="splash flex justify-center items-center bg-[#171537] w-full h-full">
+		<section className="splash flex justify-center items-center bg-[#171537]">
 			<img src='/assets/splash.png' alt="Jackpot Logo" className="w-[7rem]"></img>
 	</section> 
 	
