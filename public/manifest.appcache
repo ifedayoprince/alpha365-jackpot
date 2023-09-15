@@ -1,0 +1,10 @@
+CACHE MANIFEST
+# 2023-09-15:v2
+
+# Explicitly cached 'master entries'.
+CACHE:
+/assets/*
+
+# Resources that require the user to be online.
+NETWORK:
+*

@@ -51,36 +51,11 @@
     animation: fadeOut 300ms ease-out;
 }
 
-.dark .splash-screen {
-    background-color: hsl(39, 94%, 5%);
-    color: hsl(39, 94%, 35%);
-}
-
-.splash-screen {
-    width: 100vw;
-    height: 100%;
-    color: black;
-    background-color: wheat;
-    display: grid;
-    grid-template-rows: auto auto;
-    text-align: center;
-    justify-content: center;
-    align-content: center;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    z-index: 5000;
-
-}
-
-.splash-screen img {
-    width: 7rem;
-}
-
-.attribution {
-    width: 100%;
-    position: absolute;
-    bottom: 6%;
+.splash {
+	position: absolute;
+	top: 0px;
+	z-index: 50;
+	left: 0px;
 }
 
 body {

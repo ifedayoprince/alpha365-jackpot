@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { MinorBar } from './../components/MinorBar';
 import { BangBar } from './../components/BangBar';
 import { Bets } from './../components/Bets';
@@ -6,8 +7,21 @@ import Navbar from './../components/Navbar';
 
 const Minor = () => {
 
-	return (<section className="page minor-jackpot">
+useEffect(() => {
+	setTimeout(() => {
+		let splash = (document.querySelector('.splash') as any);
+		splash.classList.add('fade-out');
+		splash.getAnimations()[0].onfinish = () => {
+			splash.style.display = 'none';
+		}
+	}, 1500)
+}, [])
 
+	return (<section className="page minor-jackpot">
+		<section className="splash flex justify-center items-center bg-[#171537] w-full h-full">
+			<img src='/assets/splash.png' alt="Jackpot Logo" className="w-[7rem]"></img>
+	</section> 
+	
 		<Navbar />
 		<div className="body">
 			<Timer />
