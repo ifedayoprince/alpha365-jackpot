@@ -20,5 +20,11 @@ export function initializeSocketIO(server) {
     socket.on('disconnect', () => {
       console.log('User disconnected');
     });
+    
+        // Handle Socket.io events here
+
+    
+    
+    
   });
 }
