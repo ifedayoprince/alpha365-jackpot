@@ -6,7 +6,7 @@ import 'material-icons/iconfont/material-icons.css';
 import './styles/index.scss';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Page from './pages/Page';
-import Rules from './pages/Rules;'
+import Rules from './pages/Rules';
 
 ReactDOM.createRoot(document.getElementById("app")).render(
   <Provider store={store}>
