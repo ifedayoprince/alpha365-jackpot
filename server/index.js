@@ -11,9 +11,18 @@ const MemoryStoreInstance = MemoryStore(session);
 const app = express();
 const server = http.createServer(app);
 
+const allowedOrigins = (origin, callback) => {
+  const whitelist = ['https://alpha365-jackpot.ifedayoprince.repl.co', 'https://alpha365-jackpot.vercel.app']; // Add your client origins here
+  if (whitelist.indexOf(origin) !== -1) {
+    callback(null, true);
+  } else {
+    callback(new Error('Not allowed by CORS'));
+  }
+};
+
 // Configurations
 app.use(cors({
-  origin: 'https://alpha365-jackpot.vercel.app', // Replace with your client's origin
+  origin: allowedOrigins, // Replace with your client's origin
   methods: ['GET', 'POST', 'OPTION'],
   credentials: true, // Enable credentials (cookies, sessions) if needed
 }));
