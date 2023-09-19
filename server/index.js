@@ -12,7 +12,11 @@ const app = express();
 const server = http.createServer(app);
 
 // Configurations
-app.use(cors());
+app.use(cors({
+  origin: 'https://alpha365-jackpot.vercel.app', // Replace with your client's origin
+  methods: ['GET', 'POST', 'OPTION'],
+  credentials: true, // Enable credentials (cookies, sessions) if needed
+}));
 app.use(helmet());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
