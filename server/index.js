@@ -37,7 +37,7 @@ app.use(
 );
 
 // API routers
-app.use('/api/v1', baseRouter);
+// app.use('/api/v1', baseRouter);
 
 // Catch all handler for all other requests.
 app.use('*', (req, res) => {
