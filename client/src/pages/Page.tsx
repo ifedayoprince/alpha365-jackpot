@@ -10,8 +10,12 @@ import Gameover from '../components/Gameover';
 import BombMode from '../components/Bomb';
 import Menu from '../components/Menu';
 
-const Page = () => {
+import {socketConnect} from './../models/Socket';
 
+const Page = () => {
+	useEffect(()=>{
+		socketConnect();
+	}, [])
 	return (<section className="page minor-jackpot">
 
 		<Navbar />
