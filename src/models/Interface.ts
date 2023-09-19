@@ -15,3 +15,7 @@ enum GameType {
 export function getCurrentState(): Game | null {
     return null;
 }
+
+export enum BetType {
+	FIVE_USDC, TEN_USDC, TWENTY_USDC
+}
