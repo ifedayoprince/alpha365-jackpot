@@ -10,18 +10,21 @@ const app = express();
 const server = http.createServer(app);
 
 // Configurations
-app.use(cors());
+// app.use(cors());
 // app.use(helmet());
 // app.use(express.json());
 // app.use(express.urlencoded({ extended: true }));
 
-app.set('x-powered-by', false);
+// app.set('x-powered-by', false);
 
 // Set up session middleware
 
 // API routers
 // app.use('/api/v1', baseRouter);
 
+app.get('/', (req, res)=>{
+	res.send("I'm listening")
+})
 initializeSocketIO(server);
  
 // Catch all handler for all other requests.
