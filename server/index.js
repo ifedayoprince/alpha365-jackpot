@@ -1,6 +1,6 @@
 import express from 'express';
 import cors from 'cors';
-import helmet from 'helmet';
+// import helmet from 'helmet';
 import http from 'http';
 import session from 'express-session';
 import { initializeSocketIO } from './socket.js'; // Import the Socket.io logic
@@ -11,9 +11,9 @@ const server = http.createServer(app);
 
 // Configurations
 app.use(cors());
-app.use(helmet());
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+// app.use(helmet());
+// app.use(express.json());
+// app.use(express.urlencoded({ extended: true }));
 
 app.set('x-powered-by', false);
 
