@@ -3,7 +3,7 @@ import cors from 'cors';
 // import helmet from 'helmet';
 import http from 'http';
 import session from 'express-session';
-import { initializeSocketIO } from './socket.js'; // Import the Socket.io logic
+import { echo, initializeSocketIO } from './socket.js'; // Import the Socket.io logic
 
 
 const app = express();
