@@ -27,6 +27,6 @@
     "express-session": "^1.17.3",
     "cookie-parser": "^1.4.6", 
     "memorystore": "^1.6.7",
-    "socket.io": "^4.7.2"
+    "socket.io": "^3.1.2"
   }
 }
