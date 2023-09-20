@@ -35,7 +35,7 @@ export function initializeSocketIO(server) {
 			bombProgress: 0.74,
 			bigProgress: 0.23
 		}
-		socket.emit('update', state, progress)
+		io.emit('update', state, progress)
 
 
 
@@ -55,7 +55,7 @@ export function initializeSocketIO(server) {
 			
 			console.log('some bet ', betValue)
 			
-			socket.emit('update', state, progress)
+			io.emit('update', state, progress)
 
 		})
 	});
