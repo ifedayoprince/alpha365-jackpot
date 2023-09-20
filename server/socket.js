@@ -35,7 +35,8 @@ export function initializeSocketIO(server) {
 			bombProgress: 0.74,
 			bigProgress: 0.23
 		}
-		
+		socket.emit('update', state, progress)
+
 
 
 		socket.on('disconnect', () => {
