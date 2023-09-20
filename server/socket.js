@@ -35,22 +35,7 @@ export function initializeSocketIO(server) {
 			bombProgress: 0.74,
 			bigProgress: 0.23
 		}
-
-		setInterval(()=>{
-			progress.minorTimer[0] -= 1
-			
-			socket.emit('update', state, progress)
-		}, 1000)
-		setTimeout(()=>{
-			console.log('switched to big')
-			state.type = 1;
-			
-		}, 30*1000)
-		setTimeout(() => {
-			console.log('switched to bomb')
-			state.type = 2;
 		
-		}, 60 * 1000)
 
 
 		socket.on('disconnect', () => {
@@ -62,13 +47,15 @@ export function initializeSocketIO(server) {
 		socket.on('bet', (value) => {
 			let betValue = value // 0 for $5, 1 for $10, 2 for $20
 			
-			
 			state.currentPrize += betValue;
 			state.bets += 1;
 			progress.bigProgress = Math.random();
 			progress.bombProgress = Math.random();
 			
 			console.log('some bet ', betValue)
+			
+			socket.emit('update', state, progress)
+
 		})
 	});
 }
