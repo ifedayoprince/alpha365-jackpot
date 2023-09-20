@@ -25,14 +25,14 @@ app.set('x-powered-by', false);
 initializeSocketIO(server);
  
 // Catch all handler for all other requests.
-app.use('*', (req, res) => {
-  res.send({
-    data: {
-      status: 404,
-      msg: 'Endpoint not available',
-    },
-  });
-});
+// app.use('*', (req, res) => {
+//   res.send({
+//     data: {
+//       status: 404,
+//       msg: 'Endpoint not available',
+//     },
+//   });
+// });
 
 
 // Start the server
