@@ -16,7 +16,9 @@ export function initializeSocketIO(server) {
 			credentials: true
 		}
 	});
-
+io.engine.on("connection_error", (err) => {
+  console.log(err);
+});
 	io.on('connection', (socket) => {
 		console.log('A user connected');
 
