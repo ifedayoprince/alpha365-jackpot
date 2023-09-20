@@ -22,6 +22,8 @@ app.set('x-powered-by', false);
 // API routers
 // app.use('/api/v1', baseRouter);
 
+initializeSocketIO(server);
+ 
 // Catch all handler for all other requests.
 app.use('*', (req, res) => {
   res.send({
@@ -32,8 +34,6 @@ app.use('*', (req, res) => {
   });
 });
 
-
-initializeSocketIO(server);
 
 // Start the server
 const port = process.env.PORT || 3000;
